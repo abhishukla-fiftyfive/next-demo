@@ -7,7 +7,7 @@ const MovieCard = dynamic(() => import("./components/MovieCard"), {
 
 const BASE_URL =
   process.env.NODE_ENV === "production"
-    ? "https://next-demo-109lu7x47-abhisheks-projects-54851530.vercel.app"
+    ? "https://next-demo-eight-olive.vercel.app"
     : "http://localhost:3000";
 
 async function fetchData() {
