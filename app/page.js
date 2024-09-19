@@ -15,8 +15,8 @@ export default async function Home() {
     <div className="container mx-auto p-2">
       <div className="grid grid-cols-3 gap-4">
         {movies.map((movie) => (
-          <Link href={`/movie/${movie.id}`}>
-            <MovieCard key={movie.id} movie={movie} />
+          <Link href={`/movie/${movie.id}`} key={movie.id}>
+            <MovieCard movie={movie} />
           </Link>
         ))}
       </div>
