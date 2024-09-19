@@ -10,9 +10,17 @@ const BASE_URL =
     ? "https://next-demo-109lu7x47-abhisheks-projects-54851530.vercel.app"
     : "http://localhost:3000";
 
-export default async function Home() {
+async function fetchData() {
   const moviesResp = await fetch(`${BASE_URL}/api/movies`);
+  if (!moviesResp.ok) {
+    return [];
+  }
   const movies = await moviesResp.json();
+  return movies;
+}
+
+export default async function Home() {
+  const movies = await fetchData();
 
   return (
     <div className="container mx-auto p-2">
