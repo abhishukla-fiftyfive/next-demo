@@ -5,7 +5,10 @@ const MovieCard = dynamic(() => import("./components/MovieCard"), {
   ssr: false,
 });
 
-const BASE_URL = "http://localhost:3000";
+const BASE_URL =
+  process.env.NODE_ENV === "production"
+    ? "https://next-demo-109lu7x47-abhisheks-projects-54851530.vercel.app"
+    : "http://localhost:3000";
 
 export default async function Home() {
   const moviesResp = await fetch(`${BASE_URL}/api/movies`);
